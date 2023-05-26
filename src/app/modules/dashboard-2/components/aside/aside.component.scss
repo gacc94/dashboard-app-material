@@ -18,17 +18,17 @@
     &-button {
         width: 100%;
         padding: 1.75rem .5rem;
-        font-size: 1.025rem;
+        font-size: 1rem;
         font-weight: 400;
 
         display: flex;
         justify-content: start;
         align-items: center;
-        gap: 1.25rem;
-        color: #FFF !important;
+        gap: 1rem;
+        color: #767272 !important;
 
         &>mat-icon {
-            font-size: 1.5rem;
+            font-size: 1.25rem;
             width: auto;
         }
     }

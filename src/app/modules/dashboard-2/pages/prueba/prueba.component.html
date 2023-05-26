@@ -1,0 +1,37 @@
+<div style="padding: 1.5rem">
+    <h1>  Pruebas:  </h1>
+
+    <table mat-table [dataSource]="fullData" class="mat-elevation-z8" >
+
+        <!-- Numero Guia Item Column -->
+        <ng-container matColumnDef="position">
+            <th mat-header-cell *matHeaderCellDef> NumeroGuiaItem </th>
+            <td mat-cell *matCellDef="let element"> {{element.NumGuiaItem}} </td>
+        </ng-container>
+
+        <!-- Numero Item OC Column -->
+        <ng-container matColumnDef="name">
+            <th mat-header-cell *matHeaderCellDef> NumeroItemOC </th>
+            <td mat-cell *matCellDef="let element"> {{element.NumeroItemOC}} </td>
+        </ng-container>
+
+        <!-- Numero Parte Column -->
+        <ng-container matColumnDef="weight">
+            <th mat-header-cell *matHeaderCellDef> NumeroParte </th>
+            <td mat-cell *matCellDef="let element"> {{element.NumeroParte}} </td>
+        </ng-container>
+
+        <!-- Descripcion Item Column -->
+        <ng-container matColumnDef="symbol">
+            <th mat-header-cell *matHeaderCellDef> DescripcionItem </th>
+            <td mat-cell *matCellDef="let element"> {{element.DescripcionItem}} </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+
+</div>
+
+
+<pre> {{ fullData | json }} </pre>
