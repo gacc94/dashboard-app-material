@@ -1,0 +1,27 @@
+.aside {
+    background-color: blueviolet;
+    height: 100%;
+    width: 100%;
+    color: #FFF;
+
+    &-avatar {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 1rem;
+    }
+    &-name {
+        text-align: center;
+    }
+    &-button {
+        color: #FFFFFF !important;
+        padding: 1.25rem;
+        width: 100%;
+    }
+}
+.avatar {
+    border-radius: 50%;
+    width: 8rem;
+    height: 8rem;
+    object-fit: cover;
+}

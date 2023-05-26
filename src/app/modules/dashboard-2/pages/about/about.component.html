@@ -1,0 +1,24 @@
+<!--<div *ngFor="let item  of data">-->
+<!--    <pre> {{ item?.ItemFactura  | json}} </pre>-->
+<!--</div>-->
+
+<table border>
+    <thead>
+        <tr>
+            <th>N°</th>
+            <th>NumGuiaItem</th>
+            <th>NumeroItemOC</th>
+            <th>NumeroParte</th>
+            <th>DescripcionItem</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let item of data; let i = index">
+            <td >{{ i+1 }}</td>
+            <td >{{ item.NumGuiaItem}}</td>
+            <td >{{ item.NumeroItemOC}}</td>
+            <td >{{ item.NumeroParte}}</td>
+            <td >{{ item.DescripcionItem}}</td>
+        </tr>
+    </tbody>
+</table>

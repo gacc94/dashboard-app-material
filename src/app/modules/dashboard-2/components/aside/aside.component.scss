@@ -1,0 +1,41 @@
+.aside {
+    padding: 1.25rem;
+    &-avatar {
+        border-radius: 50%;
+        object-fit: cover;
+        width: 8rem;
+        height: 8rem;
+        &-container {
+            padding: 0 1rem 1rem 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+    &-divider {
+
+    }
+    &-button {
+        width: 100%;
+        padding: 1.75rem .5rem;
+        font-size: 1.025rem;
+        font-weight: 400;
+
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        gap: 1.25rem;
+        color: #FFF !important;
+
+        &>mat-icon {
+            font-size: 1.5rem;
+            width: auto;
+        }
+    }
+
+}
+mat-divider {
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+

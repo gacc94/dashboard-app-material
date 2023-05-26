@@ -1,0 +1,37 @@
+<aside class="aside">
+    <div class="aside-avatar-container">
+        <img src="assets/images/foto.png" alt="" class="aside-avatar">
+    </div>
+    <mat-divider ></mat-divider>
+
+    <button mat-button class="aside-button">
+        <mat-icon fontIcon="home"></mat-icon>
+        <span> Home</span>
+    </button>
+    <button mat-button class="aside-button">
+        <mat-icon fontIcon="dashboard"></mat-icon>
+        <span> Dashboard</span>
+    </button>
+    <button mat-button class="aside-button">
+        <mat-icon fontIcon="open_in_new"></mat-icon>
+        <span> Salir</span>
+    </button>
+
+    <mat-list>
+<!--        <div mat-subheader>Folders</div>-->
+<!--        <mat-list-item *ngFor="let folder of folders">-->
+<!--            <button mat-button mat-ripple>-->
+<!--                <mat-icon matListItemIcon>folder</mat-icon>-->
+<!--                <div matListItemTitle>Name</div>-->
+<!--            </button>-->
+
+<!--        </mat-list-item>-->
+        <mat-divider></mat-divider>
+        <div mat-subheader>Notes</div>
+        <mat-list-item *ngFor="let note of notes">
+            <mat-icon matListItemIcon>note</mat-icon>
+            <div matListItemTitle>{{note.name}}</div>
+            <div matListItemLine>{{note.updated | date}}</div>
+        </mat-list-item>
+    </mat-list>
+</aside>
