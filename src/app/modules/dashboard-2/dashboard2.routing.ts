@@ -17,7 +17,11 @@ export const dashboard2Routing: Routes =[
             },
             {
                 path: 'prueba',
-                loadComponent: () => import('./pages/prueba/prueba.component').then(c => c.PruebaComponent),
+                loadComponent: () => import('./pages/prueba/prueba.component').then((c) => c.PruebaComponent),
+            },
+            {
+                path: 'tabs',
+                loadComponent: () => import('./pages/tabs/tabs.component').then((c) => c.TabsComponent),
             },
             {
                 path: '**',
