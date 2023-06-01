@@ -1,4 +1,4 @@
-import {bootstrapApplication, BrowserModule} from "@angular/platform-browser";
+import {bootstrapApplication, BrowserModule, provideClientHydration} from "@angular/platform-browser";
 import {AppComponent} from "./app/app.component";
 import {provideRouter} from "@angular/router";
 import {appRouting} from "./app/app.routing";
@@ -7,11 +7,15 @@ import {HttpClientModule, provideHttpClient, withInterceptors} from "@angular/co
 import {BrowserAnimationsModule, provideAnimations} from "@angular/platform-browser/animations";
 
 
-bootstrapApplication(AppComponent,{
-    providers: [
-    provideRouter(appRouting),
-    importProvidersFrom(BrowserAnimationsModule, BrowserModule, HttpClientModule),
-    provideHttpClient(withInterceptors([])),
-    provideAnimations()
-]
-}).then().catch((err) => console.error(err));
+bootstrapApplication(
+    AppComponent,
+    {
+        providers: [
+            provideClientHydration(),
+            provideRouter(appRouting),
+            importProvidersFrom(BrowserAnimationsModule, BrowserModule, HttpClientModule),
+            provideHttpClient(withInterceptors([])),
+            provideAnimations()
+        ]
+    }
+).then().catch((err) => console.error(err));

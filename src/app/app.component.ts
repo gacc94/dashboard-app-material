@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, HostBinding } from '@angular/core';
 import { CommonModule } from "@angular/common";
 import { RouterModule } from "@angular/router";
+import { OverlayContainer } from "@angular/cdk/overlay";
 
 @Component({
     selector: 'app-root',
@@ -11,4 +12,16 @@ import { RouterModule } from "@angular/router";
 })
 export class AppComponent {
     title = 'dashbaord-app';
+
+    @HostBinding('class') componentClass: any;
+
+    constructor(public overlayContainer: OverlayContainer) {
+    }
+
+    onSetTheme(e: string) {
+        this.overlayContainer.getContainerElement().classList.add(e);
+        this.componentClass = e;
+    }
+
+
 }

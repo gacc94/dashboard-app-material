@@ -1,4 +1,7 @@
-<mat-sidenav-container class="sidenav-container"  >
+<mat-sidenav-container class="sidenav-container ">
+<!--                       [ngClass]="{-->
+<!--                       'dark-theme' : isDarkTheme,-->
+<!--                       'light-theme' : !isDarkTheme}">-->
     <mat-sidenav  #drawer class="sidenav mat-elevation-z20" fixedInViewport
                   [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
                   [mode]="(isHandset$ | async) ? 'over' : 'side'"
@@ -7,16 +10,28 @@
     </mat-sidenav>
     <mat-sidenav-content>
         <mat-toolbar color="primary">
-            <button
-                type="button"
-                aria-label="Toggle sidenav"
-                mat-icon-button
-                (click)="drawer.toggle()">
-                <!--                (click)="drawer.toggle()">-->
+            <div class="toolbar-toggle">
+                <button
+                    type="button"
+                    aria-label="Toggle sidenav"
+                    mat-icon-button
+                    (click)="drawer.toggle()">
+                    <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+                </button>
+                <span>dashbaord-app</span>
+            </div>
 
-                <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
-            </button>
-            <span>dashbaord-app</span>
+            <mat-slide-toggle
+                class="example-margin"
+                color="accent"
+                checked="true"
+                disabled="false"
+                [(ngModel)]="isDarkTheme" (click)="onSwitchTheme($event)">
+                <span>
+                    <mat-icon fontIcon="light_mode"></mat-icon>
+<!--                    {{ isDarkTheme }}-->
+                </span>
+            </mat-slide-toggle>
         </mat-toolbar>
         <!-- Add Content Here -->
         <!--        <app-dashboard/>-->
@@ -27,3 +42,8 @@
         <!--        <app-form/>-->
     </mat-sidenav-content>
 </mat-sidenav-container>
+
+<!--<select>-->
+<!--    <option [ngValue]="arrayTest()"></option>-->
+<!--</select>-->
+
