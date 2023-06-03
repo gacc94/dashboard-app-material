@@ -122,9 +122,20 @@ $my-warn: mat.define-palette($my-warn-color);
 
 /*
 * ================================================
+*                TIPOGRAFIA
+* ================================================
+* */
+$my-typography: mat.define-typography-config(
+    $font-family: 'Signika',
+);
+
+@include mat.all-component-typographies($my-typography);
+/*
+* ================================================
 *                TEMA PROPIO
 * ================================================
 * */
+
 
 $app-light-theme: mat.define-light-theme((
     color: (
